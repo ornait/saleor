@@ -22,12 +22,72 @@
         <!--[if lt IE 9]>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+
+
+        <style>
+          .home__block1 .home--square {              
+              background-position-y: 75%;
+          }         
+          @media only screen and (max-width: 500px) {
+            .home__block1 .home--square {
+                height: 150px;
+            }
+          }
+           @media (min-width: 768px) {
+            .home__block1 .home--square {
+                height: 200px;
+            }
+          }
+           @media (min-width: 992px) {
+            .home__block1 .home--square {
+                height: 350px;
+            }
+          }         
+          @media (min-width: 1200px) { 
+            .home__block1 .home--square {
+                height: 450px;
+            }
+          }
+          .footer ul a {
+            color:#333;
+          }
+          .btn.primary {
+            background-color: #47BAC1;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#47BAC1), to(#36999F));
+            background-image: -webkit-linear-gradient(top, #47BAC1, #36999F);
+            background-image: -moz-linear-gradient(top, #47BAC1, #36999F);
+            background-image: -ms-linear-gradient(top, #47BAC1, #36999F);
+            background-image: -o-linear-gradient(top, #47BAC1, #36999F);
+            background-image: linear-gradient(to bottom, #47BAC1, #36999F);
+            filter: progid: DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#47BAC1, endColorstr=#36999F);
+          }
+          .btn.primary:hover{            
+            background-color: #36999f; background-image: -webkit-gradient(linear, left top, left bottom, from(#36999f), to(#297479));
+            background-image: -webkit-linear-gradient(top, #36999f, #297479);
+            background-image: -moz-linear-gradient(top, #36999f, #297479);
+            background-image: -ms-linear-gradient(top, #36999f, #297479);
+            background-image: -o-linear-gradient(top, #36999f, #297479);
+            background-image: linear-gradient(to bottom, #36999f, #297479);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#36999f, endColorstr=#297479);
+          }
+          .product-list .text-center {
+            padding: 1px 0 1pc;
+            border-radius: 2px;
+            box-shadow: 0px 1px 1px 0px #cacaca;
+            background-color: #f5f5f5;
+          }
+          .product-list .text-center:hover {
+            box-shadow: 0px 8px 13px rgba(0, 0, 0, 0.15)
+          }
+          .product-list .text-center .panel-footer {
+            color: #fd6b6b;
+          }
+        </style>
     </head>
 
     <body>
         {% block header %}
             <header class="navbar" role="navigation">
-                <div class="navbar__login hidden-sm-down">
+                <div class="navbar__login hidden-sm-down" style="background-color: #f2f2f2;">
                   <div class="container">
                     <div class="row">
                       <div class="col-6">
@@ -67,7 +127,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="navbar__brand">
+                <div class="navbar" style="background-color: #f8f8f8;">
                   <div class="container">
                     <div class="row no-gutters">
                       <div class="col-8 col-md-4 navbar__logo">
@@ -137,6 +197,8 @@
                     </nav>
                   </div>
                 </div>
+                {% block banner %}
+                {% endblock %}
             </header>
         {% endblock %}
         <div class="container maincontent">
@@ -158,8 +220,9 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-3">
-                      <a href="/" class="footer__logo">
-                        <svg data-src="{% static "images/saleor_logo.svg" %}" height="38px" width="176px" />
+                      <a href="/" style="color:#333333;text-decoration-line: none;">
+                          <div style="font-size: 27px;">ORNA</div>
+                          <div style="font-size: 20px;">Jewelry Marketplace</div>
                       </a>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -215,14 +278,6 @@
                           </li>
                         {% endif %}
                       </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-12">
-                      <a target="_blank" rel="noopener" class="github-footer" href="https://github.com/mirumee/saleor">
-                        <svg data-src="{% static "images/github_logo.svg" %}" width="45px" height="45px"/>
-                      </a>
-                      <a target="_blank" rel="noopener" href="https://twitter.com/getsaleor">
-                        <svg data-src="{% static "images/twitter_logo.svg" %}" width="45px" height="45px" />
-                      </a>
                     </div>
                   </div>
                 </div>
